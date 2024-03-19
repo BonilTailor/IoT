@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <title>Weather of City</title>
+    <style>
+        .center {
+            height: 690px;
+            width: 1000px;
+            background: #8eb1f3;
+            position: absolute;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            top: 50%;
+            left: 50%;
+            margin-top: -300px;
+            margin-left: -500px;
+        }
+        
+        .position {
+            height: 700px;
+            width: 1000px;
+            background: #8eb1f3;
+            position: absolute;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            top: 50%;
+            left: 50%;
+            margin-top: -300px;
+            margin-left: -500px;
+        }
+        
+        .form {
+            padding-top: 1px;
+            padding-right: 30px;
+            padding-bottom: 1px;
+            padding-left: 30px;
+        }
+        
+        .ip {
+            background-color: #ffffff;
+            /* Green */
+            border: none;
+            color: black;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+        }
+    </style>
+</head>
+
+<body bgcolor="#ffffff">
+
+    <center>
+        <h1 style="font-family: Helvetica ;color: rgb(255, 138, 5);">Weather of City</h1>
+    </center>
+    <div class="center">
+        <div align="center" class="form">
+            <br><br>
+            <input type="text" id="ip" class="ip" placeholder="Paste Your IP"></input><br>
+        </div>
+        <div align="position" class="form">
+            <p style='line-height: 1px;font-family: Helvetica;color: #fff;font-size: 60px;' id="temperature">
+                <img src='temperature.png' height="80px" width="80px" style='vertical-align: middle' /> 32 *C
+            </p>
+        </div>
+        <div align="position" class="form">
+            <p style='line-height: 1px;font-family: Helvetica;color: #fff;font-size: 60px;' id="humidity">
+                <img src='humidity.png' height="80px" width="80px" style='vertical-align: middle' /> 28 %
+            </p>
+        </div>
+        <div align="position" class="form">
+            <p style='line-height: 1px;font-family: Helvetica;color: #fff;font-size: 60px;' id="Rain">
+                <img src='rain.png' height="80px" width="80px" style='vertical-align: middle' /> x
+            </p>
+        </div>
+
+        <div align="center" class="form">
+            <h1 style="font-family: 'Times New Roman', Times, serif;color: rgba(252, 249, 61, 0.959);"> -Bonilkumar Vijaykumar Tailor</h1>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        loaddata();
+    };
+
+    function loaddata() {
+        var ip = document.getElementById('ip').value;
+        var url = "http://" + ip + "/data"
+        $.getJSON(url, function(data) {
+            var val = data;
+            var humid = data['Humidity'];
+            var temper = data['temperature'];
+            var Rain = data['water'];
+            document.getElementById("temperature").innerHTML = "<img src = 'temperature.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " + temper;
+            document.getElementById("humidity").innerHTML = "<img src = 'humidity.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " + humid;
+            document.getElementById("Rain").innerHTML = "<img src = 'Rain.jpg' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " + Rain;
+
+        });
+
+    }
+    window.setInterval(function() {
+        loaddata();
+    }, 5000);
+</script>
+
+</html>

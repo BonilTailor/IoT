@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smart City</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .header {
+            background-color: rgb(248, 232, 4);
+            color: white;
+            padding: 13px;
+            font-size: 48px;
+            text-align: center;
+        }
+        
+        .footer {
+            background-color: rgb(142, 4, 255);
+            color: white;
+            padding: 17px;
+            font-size: 48px;
+            text-align: center;
+        }
+        
+        .column {
+            float: left;
+            padding: 49px;
+            font-size: 15px;
+        }
+        
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .menu {
+            width: 35%;
+        }
+        
+        .content {
+            width: 65%;
+            font-size: 20px;
+        }
+        
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu li {
+            padding: 25px;
+            margin-bottom: 25px;
+            background-color: #33b5e5;
+            color: #ffffff;
+        }
+        
+        .menu li:hover {
+            background-color: #f2faff;
+        }
+        
+        .button {
+            background-color: rgb(2, 255, 23);
+            /* Green */
+            border: 3px solid rgb(247, 4, 4);
+            color: rgb(255, 255, 255);
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 28px;
+            cursor: pointer;
+            display: block;
+            border-radius: 8px;
+        }
+        
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+        
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+        
+        .button:hover span {
+            padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+</head>
+<script>
+    function openWin0() {
+        window.open("file:///H:/IoT_Read_Data/parking.html");
+    }
+
+    function openWin1() {
+        window.open("file:///H:/IoT_Read_Data/env.html");
+    }
+
+    function openWin2() {
+        window.open("file:///H:/IoT_Read_Data/weather.html");
+    }
+
+    function openWin3() {
+        window.open("file:///H:/IoT_Read_Data/burgler.html");
+    }
+</script>
+
+<body bgcolor="#ffffff">
+
+    <div class="header">
+        <p>The Smart City</p>
+    </div>
+
+    <div class="clearfix">
+        <div class="column menu">
+            <ul>
+                <p><button onclick="openWin2()" style="width: 500px; height: 100px;" class="button"><span>Weather of City</span></button></p>
+                <p><button onclick="openWin3()" style="width: 500px; height: 100px;" class="button"><span>Burglar Alarm System</span></button></p>
+                <p><button onclick="openWin0()" style="width: 500px; height: 100px;" class="button"><span>Parking Slot Availability</span></button></p>
+                <p><button onclick="openWin1()" style="width: 500px; height: 100px;" class="button"><span>Environment of City</span></button></p>
+
+            </ul>
+        </div>
+
+        <div class="column content">
+            <h1 style="font-family: Helvetica ;color: rgb(245, 86, 75);">Objective</h1>
+            <p style="color: rgb(245, 86, 75);">This is the smart city build by Bonilkumar Vijaykumar Tailor.</p>
+            <p style="color: rgb(245, 86, 75);">In this smart city everyting is working on IoT. In this HTML page we have given four option of facility, that are available in this smart city project.</p>
+            <p style="color: rgb(245, 86, 75);">First option will take you on the other page which is for Weather of City. </p>
+            <p style="color: rgb(245, 86, 75);">Second option will take you on the other page which is for Burglar Alarm System. </p>
+            <p style="color: rgb(245, 86, 75);">Third option will take you on the other page which is for Parking Slot Availability. </p>
+            <p style="color: rgb(245, 86, 75);">Fourth option will take you on the other page which is for Environment of City. </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>- Bonilkumar Vijaykumar Tailor</p>
+    </div>
+
+</body>
+
+</html>
